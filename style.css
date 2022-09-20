@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #1c2a39;
+  --gray: #5c6a79;
+  --purple: #4c3db2;
+}
+
+/** ------------------------------ START HEADER ------------------------------ */
+.title a{
+color: var(--black);
+font-weight: bold;
+text-decoration: none;
+}
+.title a span{
+  color:  var(--purple);
+}
+.title:hover{
+  transition: all .3s;
+  transform: scale(1.1);
+}
+
+.navbar{
+  height: 120px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.menu, .menu--icons{
+  display: flex;
+  flex-direction: row;
+}
+
+.menu .active {
+  color: var(--black);
+  font-weight: bold;
+}
+
+.menu li, .menu--icons li{
+  margin: 0 10px;
+}
+
+.menu li a, .menu--icons li a {
+  font-size: 20px;
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.menu--icons li {
+  color: var(--black);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.menu--icons li:hover{
+  color: var(--purple);
+  transform: scale(1.1);
+}
+
+/** ------------------------------- END HEADER ------------------------------- */
