@@ -98,6 +98,83 @@
   font-size: 12px;
 }
 
-
-
 /** ------------------------------- END HEADER ------------------------------- */
+
+/** -------------------------- START SLIDER SECTION -------------------------- */
+.home--slider {
+  width: 80%;
+  margin: 0 auto;
+  height: 600px;
+}
+
+.carousel-item img {
+  height: 600px;
+}
+/** --------------------------- END SLIDER SECTION --------------------------- */
+
+/** --------------------------- START STORE SECTION -------------------------- */
+.store {
+  width: 80%;
+  margin-left: 10%;
+}
+
+/*? Start Card */
+
+/* Card Standarts */
+.fos {
+  font-family: "Open Sans", sans-serif;
+}
+
+.gray {
+  color: var(--gray);
+}
+
+.black {
+  color: var(--black);
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+/* Card Standarts */
+
+.product--rate--star .bi-star-fill {
+  color: #eeedf5;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.product--rate--star .bi-star-fill.active {
+  color: #f2c94c;
+}
+
+.product-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.old--price {
+  text-decoration: line-through;
+  color: #bdbdbd;
+}
+
+.btn--purple {
+  cursor: pointer;
+  border: 2px solid var(--purple);
+  color: var(--purple);
+  font-weight: bold;
+  background-color: transparent;
+  transition: all 250ms ease-in-out;
+}
+
+.btn--purple:hover {
+  background-color: var(--purple);
+  color: #ffffff;
+}
+
+/*? End Card */
+
+/** ---------------------------- END STORE SECTION --------------------------- */
