@@ -177,4 +177,51 @@
 
 /*? End Card */
 
+/*? Start Filter */
+.filter--background {
+  position: absolute;
+  left: 0;
+  width: 500px;
+  height: 700px;
+  background-color: #efeef6;
+  z-index: -1;
+}
+
+.filter{
+  position: absolute;
+  display: flex;
+  min-height: 650px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.filter li{
+  color: var(--gray);
+  margin-bottom: 32px;
+  cursor: pointer;
+}
+
+.filter li:hover{
+  color: var(--purple);
+}
+
+.filter li.active{
+  color: var(--purple);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.filter li.active::before{
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--purple);
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  margin-top: 13px;
+}
+/*? End Filter */
+
 /** ---------------------------- END STORE SECTION --------------------------- */
