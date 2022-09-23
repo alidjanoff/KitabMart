@@ -168,6 +168,8 @@
   font-weight: bold;
   background-color: transparent;
   transition: all 250ms ease-in-out;
+  border-radius: 10px;
+  padding: 5px 10px;
 }
 
 .btn--purple:hover {
@@ -187,7 +189,7 @@
   z-index: -1;
 }
 
-.filter{
+.filter {
   position: absolute;
   display: flex;
   min-height: 650px;
@@ -195,24 +197,24 @@
   flex-direction: column;
 }
 
-.filter li{
+.filter li {
   color: var(--gray);
   margin-bottom: 32px;
   cursor: pointer;
 }
 
-.filter li:hover{
+.filter li:hover {
   color: var(--purple);
 }
 
-.filter li.active{
+.filter li.active {
   color: var(--purple);
   font-size: 24px;
   font-weight: bold;
 }
 
-.filter li.active::before{
-  content: '';
+.filter li.active::before {
+  content: "";
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -225,3 +227,110 @@
 /*? End Filter */
 
 /** ---------------------------- END STORE SECTION --------------------------- */
+
+/** ------------------------- START BASKET MODAL MENU ------------------------ */
+.basket--overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #5c6a7950;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.basket--modal {
+  position: relative;
+  width: 450px;
+  background-color: #ffffff;
+  height: 100%;
+  float: right;
+}
+
+.basket--modal .bi-x {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 48px;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.basket--title {
+  color: var(--black);
+  margin-top: 48px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.basket--list {
+  padding: 0 10px;
+  margin-top: 32px;
+  max-width: 90%;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.basket--item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.item--image {
+  width: 100px;
+  height: 100px;
+}
+
+.item--info {
+  width: 150px;
+}
+
+.item--name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.item--price {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.item--remove {
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--gray);
+}
+
+.item--counter {
+  font-size: 24px;
+  color: var(--black);
+  font-weight: bold;
+}
+
+.item--decrese,
+.item--increse {
+  cursor: pointer;
+  color: var(--purple);
+}
+
+.item--count {
+  margin: 0 10px;
+}
+
+.basket--total {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+}
+
+.basket--total button {
+  width: 250px;
+}
+
+/** -------------------------- END BASKET MODAL MENU ------------------------- */
