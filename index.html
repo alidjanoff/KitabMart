@@ -25,8 +25,8 @@
         <ul class="menu--icons">
           <li><i class="bi bi-person"></i></li>
           <li><i class="bi bi-search"></i></li>
-          <li class="basket--icon">
-            <i class="bi bi-bag"></i> <span class="basket--count">0</span>
+          <li class="basket--icon" onclick="toggleModal()">
+            <i class="bi bi-bag"></i> <span class="basket--count"></span>
           </li>
         </ul>
       </nav>
@@ -96,138 +96,29 @@
       <!-- ----------------------------------------------------------------------- -->
       <section class="store my-5">
         <div class="filter--background"></div>
-        <ul class="filter">
-          <li class="active">Kitablar</li>
-          <li>Roman</li>
-          <li>Şəxsi İnkişaf</li>
-          <li>Fantastik</li>
-        </ul>
+        <ul class="filter"></ul>
         <div class="row">
-          <div class="col-5 offset-2 my-5">
-            <div class="row store--card">
-              <div class="col-6">
-                <img
-                  src="./assets/images/books/nutuk.jpg"
-                  alt="Nutuk"
-                  class="img-fluid shadow"
-                  width="258"
-                  height="400"
-                />
-              </div>
-              <div class="col-6 d-flex flex-column justify-content-between">
-                <div class="card--details">
-                  <span class="fos gray fs-5">Mustafa Kemal Atatürk</span>
-                  <br />
-                  <span class="fs-4 fw-bold">Nutuk</span>
-                  <br />
-                  <span class="product--rate--star"
-                    ><i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <span class="gray">90%</span>
-                  </span>
-                </div>
-                <p class="product-description fos gray">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                  harum officia commodi ducimus adipisci possimus pariatur, rem
-                  minima labore provident quasi autem ex libero tempore
-                  voluptatibus tenetur necessitatibus. Beatae, tempore.
-                </p>
-                <div>
-                  <span class="balck fw-bold fs-6 me-2">12 AZN</span>
-                  <span class="fs-6 fw-bold old--price">19 AZN</span>
-                </div>
-                <button class="btn--purple">SƏBƏTƏ AT</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-5 my-5">
-            <div class="row store--card">
-              <div class="col-6">
-                <img
-                  src="./assets/images/books/nutuk.jpg"
-                  alt="Nutuk"
-                  class="img-fluid shadow"
-                  width="258"
-                  height="400"
-                />
-              </div>
-              <div class="col-6 d-flex flex-column justify-content-between">
-                <div class="card--details">
-                  <span class="fos gray fs-5">Mustafa Kemal Atatürk</span>
-                  <br />
-                  <span class="fs-4 fw-bold">Nutuk</span>
-                  <br />
-                  <span class="product--rate--star"
-                    ><i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <span class="gray">90%</span>
-                  </span>
-                </div>
-                <p class="product-description fos gray">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                  harum officia commodi ducimus adipisci possimus pariatur, rem
-                  minima labore provident quasi autem ex libero tempore
-                  voluptatibus tenetur necessitatibus. Beatae, tempore.
-                </p>
-                <div>
-                  <span class="balck fw-bold fs-6 me-2">12 AZN</span>
-                  <span class="fs-6 fw-bold old--price">19 AZN</span>
-                </div>
-                <button class="btn--purple">SƏBƏTƏ AT</button>
-              </div>
-            </div>
+          <div>
+            <div class="row store--card"></div>
           </div>
         </div>
       </section>
       <!-- ----------------------------------------------------------------------- -->
       <!--                            END STORE SECTION                            -->
       <!-- ----------------------------------------------------------------------- -->
-      
+
       <!-- ----------------------------------------------------------------------- -->
       <!--                         START BASKET MODAL MENU                         -->
       <!-- ----------------------------------------------------------------------- -->
       <div class="basket--overlay">
         <div class="basket--modal">
-          <i class="bi bi-x"></i>
+          <i class="bi bi-x" onclick="toggleModal()"></i>
           <h2 class="basket--title">Səbətdəki Məhsullar</h2>
           <ul class="basket--list">
-            <li class="basket--item">
-              <img class="item--image" src="/assets/images/books/nutuk.jpg" alt="Nutuk">
-              <div class="item--info">
-                <h3 class="item--name">Nutuk</h3>
-                <span class="item--price">12 AZN</span>
-                </br>
-                <span class="item--remove">Sil</span>
-              </div>
-              <div class="item--counter">
-                <span class="item--decrese">-</span>
-                <span class="item--count">1</span>
-                <span class="item--increse">+</span>
-              </div>
-            </li>
-            <li class="basket--item">
-              <img class="item--image" src="/assets/images/books/nutuk.jpg" alt="Nutuk">
-              <div class="item--info">
-                <h3 class="item--name">Nutuk</h3>
-                <span class="item--price">12 AZN</span>
-                </br>
-                <span class="item--remove">Sil</span>
-              </div>
-              <div class="item--counter">
-                <span class="item--decrese">-</span>
-                <span class="item--count">1</span>
-                <span class="item--increse">+</span>
-              </div>
-            </li>
+            <li class="basket--item fs-5 fw-bold item--none">Səbətdə məhsul yoxdur</li>
           </ul>
           <div class="basket--total">
-            <span class="fw-bold mb-3 fs-5">Cəmi: 24 AZN</span>
+            <span class="fw-bold mb-3 fs-5 total--price"></span>
             <button class="btn--purple">Ödə</button>
           </div>
         </div>
@@ -235,7 +126,6 @@
       <!-- ----------------------------------------------------------------------- -->
       <!--                          END BASKET MODAL MENU                          -->
       <!-- ----------------------------------------------------------------------- -->
-
     </main>
     <!-- ----------------------------------------------------------------------- -->
     <!--                              START FOOTER                               -->

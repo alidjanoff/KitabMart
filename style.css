@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
 * {
   font-family: "Montserrat", sans-serif;
   padding: 0;
@@ -7,12 +8,14 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+  user-select: none;
 }
 
 :root {
   --black: #1c2a39;
   --gray: #5c6a79;
   --purple: #4c3db2;
+  --transition: all 250ms ease-in-out;
 }
 
 /** ------------------------------ START HEADER ------------------------------ */
@@ -98,6 +101,11 @@
   font-size: 12px;
 }
 
+/* Ici bos olanda gorsenmir */
+.basket--count:empty {
+  display: none;
+}
+
 /** ------------------------------- END HEADER ------------------------------- */
 
 /** -------------------------- START SLIDER SECTION -------------------------- */
@@ -138,6 +146,10 @@
 }
 /* Card Standarts */
 
+.store--card .col-6 img {
+  height: 300px;
+}
+
 .product--rate--star .bi-star-fill {
   color: #eeedf5;
   margin-right: 5px;
@@ -148,9 +160,25 @@
   color: #f2c94c;
 }
 
+.item--creator {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item--name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .product-description {
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -167,7 +195,7 @@
   color: var(--purple);
   font-weight: bold;
   background-color: transparent;
-  transition: all 250ms ease-in-out;
+  transition: var(--transition);
   border-radius: 10px;
   padding: 5px 10px;
 }
@@ -236,15 +264,27 @@
   background-color: #5c6a7950;
   width: 100%;
   height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.basket--overlay.show {
+  opacity: 1;
   z-index: 999;
 }
 
 .basket--modal {
   position: relative;
-  width: 450px;
+  width: 0;
   background-color: #ffffff;
   height: 100%;
   float: right;
+  transition: var(--transition);
+}
+
+.basket--overlay.show .basket--modal {
+  width: 450px;
 }
 
 .basket--modal .bi-x {
@@ -276,6 +316,13 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+}
+
+.item--none{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(10px);
 }
 
 .item--image {
@@ -331,6 +378,11 @@
 
 .basket--total button {
   width: 250px;
+}
+
+/* Sibilis elemeti gizletmek (if for css) */
+.total--price:empty + .btn--purple {
+  display: none;
 }
 
 /** -------------------------- END BASKET MODAL MENU ------------------------- */
